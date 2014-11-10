@@ -25,11 +25,13 @@ In the vagrantfile the two lines that begin with "config.vm.network" redirect yo
 Which allow "geoserver" to access the spatial dababase in your container.
 
 OKey, now all you have to do is to open geoserver sign in, add a new store choose the option "Postgis data base" and in the connexion parameters:
-- Replace local host by the ip of your container 
+- Replace local host by the ip address of your container 
 - Replace port by the port used in you posgres container 
 - User, password:postgres,postgres (or the user name and the password you choosed while instaling posgreserver)
 - Click on save 
-How to get the ip adress of a container
+
+
+How to get the ip address of a container
 ====
 - Type "docker ps" To display all you running containers
 - Type "docker inspect name of container" you can fin the ip adress you are looking for under the name "IPAddress"
