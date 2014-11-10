@@ -19,8 +19,9 @@ That is being done. Now:
 - Launch Boot2docker « vagrant ssh »
 - Execute the script "run.sh" « /bin/bash run.sh »: that script pull two images (postgres and geoserver) and create 
         two containers for each image. It also create a database in the "postgres" container based on the script "dab.sql".
-Now you have two containers , one hosting postgres+postgis server and the other geoserver. Also ,in the script "run.sh" we published
-the containers ports (5432,8080) to the host.
+
+Now you have two containers , one hosting postgres+postgis server and the other geoserver. Also ,in the script "run.sh" we published the containers ports (5432,8080) to the host.
+
 In the vagrantfile the two lines that begin with "config.vm.network" redirect your windows machine's port to your virtual machine's ports
 Which allow "geoserver" to access the spatial dababase in your container.
 
