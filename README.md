@@ -1,7 +1,6 @@
 mini_projet_vagrant-docker
 ==========================
-In this repository you will find an example of using vagrant virtual machine to add a spatial database using a postgres server 
-hosted in a container in your virtual machine; and to be able to visualise you layer in geoserver.
+In this repository you will find an example of using vagrant virtual machine to add a spatial database using a postgres server hosted in a container in your virtual machine; and to be able to visualise you layer in geoserver.
 
 To do that all you have to do is to follow the steps bellow. LET'S GO !!!
 ==
@@ -27,8 +26,13 @@ Which allow "geoserver" to access the spatial dababase in your container.
 
 OKey, now all you have to do is to open geoserver sign in, add a new store choose the option "Postgis data base" and in the connexion parameters:
 - Replace local host by the ip of your container 
-- Replace port by the port used in you posgres container
+- Replace port by the port used in you posgres container 
 - User, password:postgres,postgres (or the user name and the password you choosed while instaling posgreserver)
 - Click on save 
+How to get the ip adress of a container
+====
+- Type "docker ps" To display all you running containers
+- Type "docker inspect name of container" you can fin the ip adress you are looking for under the name "IPAddress"
+ps : you can just type the first two letters of the container's name .
 
 Now you have to publish your layer and you can visualise it !!!
