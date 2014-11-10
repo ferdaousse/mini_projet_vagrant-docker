@@ -18,5 +18,5 @@ docker run --name ${SERVER_NAME} -d  -p 5432:5432 ${IMAGE_NAME}
 sleep 20
 
 echo "== Running the sql script to create all objects"
-docker run --link ${SERVER_NAME}:db -ti -v /vagrant:/vagrant ${IMAGE_NAME} sh -c 'exec psql -h "$DB_PORT_5432_TCP_ADDR" -p "$DB_PORT_5432_TCP_PORT" -U postgres -f /vagrant/simple-db/dab.sql'
+docker run --link ${SERVER_NAME}:db -ti -v /vagrant:/vagrant ${IMAGE_NAME} sh -c 'exec psql -h "$DB_PORT_5432_TCP_ADDR" -p "$DB_PORT_5432_TCP_PORT" -U postgres -f /vagrant/simple-db/comptes.sql'
 docker run --name "geoserver"  --link postserver:ps -p 5432:5432 -d
